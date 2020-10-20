@@ -1,0 +1,25 @@
+input[type=text],
+input[type=email],
+input[type=password] {
+    background-color: #eee;
+    border: none !important;
+    box-shadow: 0px 1px 1px #ddd !important;
+}
+
+input[type=text]:focus {
+    background-color: #eee;
+    border: none !important;
+    box-shadow: 0px 4px 5px #ccc !important;
+}
+
+input[type=email]:focus {
+    background-color: #eee;
+    border: none !important;
+    box-shadow: 0px 4px 5px #ccc !important;
+}
+
+input[type=password]:focus {
+    background-color: #eee;
+    border: none !important;
+    box-shadow: 0px 4px 5px #ccc !important;
+}
