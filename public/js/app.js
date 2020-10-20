@@ -2152,7 +2152,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: 'todos',
   data: function data() {
     return {
       todos: null
@@ -2163,10 +2162,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   methods: {
     getTodos: function getTodos() {
-      var token = "Bearer ".concat(localStorage.getItem('token'));
-      axios.defaults.headers.common.Authorization = token;
+      var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOlwvXC8xMjcuMC4wLjE6ODAwMFwvYXBpXC9hdXRoXC9sb2dpbiIsImlhdCI6MTYwMzIwMzUxNCwiZXhwIjoxNjAzMjA3MTE0LCJuYmYiOjE2MDMyMDM1MTQsImp0aSI6IlRvWTNQdkVMMnpvUm5ySGQiLCJzdWIiOjgsInBydiI6IjIzYmQ1Yzg5NDlmNjAwYWRiMzllNzAxYzQwMDg3MmRiN2E1OTc2ZjcifQ.P3z6QFSVQvtI9nL-SNdDfLKLQCr1YT6725CRNFI6KZE".trim().toString();
+      axios.defaults.headers.common.Authorization = 'Bearer ' + token;
       axios.get('/api/todolist').then(function (response) {
-        console.log(response.data.message.data);
         this.todos = response.data.message.data;
       })["catch"](function (error) {
         console.log(error);
@@ -38218,34 +38216,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    { staticClass: "container", staticStyle: { color: "#112233" } },
-    [
-      _c("div", { staticClass: "row justify-content-center" }, [
-        _c("div", { staticClass: "col-md-8" }, [
-          _c("div", { staticClass: "card" }, [
-            _c("div", { staticClass: "card-header" }, [
-              _vm._v("Todo List Items")
-            ]),
-            _vm._v(" "),
-            _c(
-              "div",
-              { attrs: { "v-if": _vm.todos.length > 0 } },
-              _vm._l(_vm.todos, function(todo) {
-                return _c("div", { key: todo.id, staticClass: "card-body" }, [
-                  _c("p", [_vm._v(_vm._s(todo.id))])
-                ])
-              }),
-              0
-            )
+  return _vm._m(0)
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c(
+      "div",
+      { staticClass: "container", staticStyle: { color: "#112233" } },
+      [
+        _c("div", { staticClass: "row justify-content-center" }, [
+          _c("div", { staticClass: "col-md-8" }, [
+            _c("div", { staticClass: "card" }, [
+              _c("div", { staticClass: "card-header" }, [
+                _vm._v("Todo List Items")
+              ])
+            ])
           ])
         ])
-      ])
-    ]
-  )
-}
-var staticRenderFns = []
+      ]
+    )
+  }
+]
 render._withStripped = true
 
 
